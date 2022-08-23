@@ -124,11 +124,11 @@
 \titlespacing{\subsection}
     {12pt} % left spacing
     {\parskip} % before spacing
-    {-\parskip} % after spacing
+    {\parskip} % after spacing
 
 \NewDocumentCommand{\cventry}{ m m o o }
 {
-    \subsection[#1]{\textbf{#1} \hfill #2 }
+    \subsection[#1]{\textbf{#1} \hfill #2}
     \IfNoValueTF{#3}
     {}
     {{\parindent=12pt\par #3 \hfill #4 \par}}
@@ -201,17 +201,19 @@
     }
 }
 
-\NewDocumentCommand{\iconlink}{ o m o }{
+\NewDocumentCommand{\iconlink}{o o m}{
+    \hspace{-16pt}
     \IfNoValueTF{#1}{
         \let\icon\faLink
     }{
-        \let\icon{#1}
+        \let\icon#1
     }
     \IfNoValueTF{#3}{
-        \underline{\icon\ \href{#2}{#2}}
+        \underline{\href{#2}{\icon}}
     }{
-        \underline{\icon\ \href{#3}{#2}}
+        \underline{\href{#3}{\icon\ #2}}
     }
+    \hspace{-10pt}
 }
 
 
