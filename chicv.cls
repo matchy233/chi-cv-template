@@ -128,17 +128,16 @@
 
 \NewDocumentCommand{\name}{ m }
 {
-    {
-        \headingfont\Huge#1
-    }
+    {\headingfont\Huge#1}
 }
 
 
 \newenvironment{skilllist}
 {
     \begin{itemize}[
+        label={},
         leftmargin=12pt,
-        itemsep=0em,
+        itemsep=-0.5em,
     ]
 }
 {

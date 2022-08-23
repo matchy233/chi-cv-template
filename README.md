@@ -10,7 +10,7 @@ Rip-off of [Alex Chi Zhang (cxs/skyzh)](https://github.com/skyzh)'s [CV](https:/
 
 - [x] Font set-ups (esp. local font config)
 - [ ] Local fontawesome set-up
-- [ ] Skill list environment (label-free bullet list with 24pt indentation)
+- [x] Skill list environment (label-free bullet list with 24pt indentation)
 - [ ] Basic info list environment (list-like environment, straight line sepearted items listed on the same line; maybe smart wrapping)
 - [ ] "Updated on YYYY/MM/DD" footer
 - [ ] Refine hyperlink style (underlined, sufficient vspace -- no overlap w/ chars)
