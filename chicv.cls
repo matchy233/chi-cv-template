@@ -27,7 +27,7 @@
 
 % For hyperlink customization
 \RequirePackage[hidelinks]{hyperref}
-\RequirePackage{fontawesome} % icons
+\RequirePackage{fontawesome5} % icons
 
 % For list environment customizations
 \RequirePackage{enumitem}
@@ -166,7 +166,7 @@
 % defines one's linkedin
 % usage: \linkedin{<linkedin>}
 \NewDocumentCommand{\linkedin}{ m o }{
-    \faLinkedin\IfNoValueTF{#1}{
+    \faLinkedinIn\IfNoValueTF{#1}{
         \underline{\href{#1}{#1}}
     }{
         \underline{\href{#2}{#1}}
@@ -174,7 +174,7 @@
 }
 
 \NewDocumentCommand{\linkedinsquare}{ m o }{
-    \faLinkedinSquare\IfNoValueTF{#1}{
+    \faLinkedin\IfNoValueTF{#1}{
         \underline{\href{#1}{#1}}
     }{
         \underline{\href{#2}{#1}}
