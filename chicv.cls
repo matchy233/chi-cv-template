@@ -8,9 +8,11 @@
     left=0.8in,
     right=0.8in,
     top=0.5in,
-    bottom=0.5in,
+    bottom=0.8in,
     nohead
 ]{geometry}
+
+\RequirePackage{fancyhdr}
 
 % For font setting
 \RequirePackage[T1]{fontenc}
@@ -24,19 +26,27 @@
 \RequirePackage{xparse}
 
 % For hyperlink customization
-\RequirePackage{hyperref}
+\RequirePackage[hidelinks]{hyperref}
 \RequirePackage{fontawesome} % icons
 
+% For list environment customizations
+\RequirePackage{enumitem}
 
 %% ----------------- END OF PACKAGES ----------------- %%
 
+% Footers
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\color{gray}Updated on \today}
+
 % Spacings
+\setlength{\footskip}{12pt}
 \setlength{\parindent}{0pt}
-\RequirePackage{enumitem}
 \setlist[itemize]{
     leftmargin=36pt,
     itemsep=.01em,
-    topsep=.1em
+    topsep=0pt,
 }
 
 % \let\olditemize\itemize
@@ -92,7 +102,6 @@
     }
 }
 
-
 % format for section title
 \titleformat{\section}
     {\headingfont\Large}                % shape
@@ -127,64 +136,83 @@
 
 
 \NewDocumentCommand{\name}{ m }
-{
-    {\headingfont\Huge#1}
-}
+{{\headingfont\Huge#1}}
 
 
-\newenvironment{skilllist}
+\newenvironment{compactlist}
 {
     \begin{itemize}[
         label={},
         leftmargin=12pt,
-        itemsep=-0.5em,
+        itemsep=-0.2em,
     ]
 }
 {
     \end{itemize}
 }
 
-
-%% embeded social media link command
-\hypersetup{%
-  colorlinks=false,% hyperlinks will be black
-  linkbordercolor=black,
-  pdfborderstyle={/S/U/W 1}% border style will be underline of width 1pt
-}
-
 % defines one's email
 % usage: \email{<email>}
-\newcommand{\email}[1]{\faEnvelope\ \href{mailto:#1}{#1}}
+\newcommand{\email}[1]{
+    \faEnvelope\ \underline{\href{mailto:#1}{#1}}
+}
 
 % defines one's phone
 % usage: \phone{<phone>}
-\newcommand{\phone}[1]{\faPhone\ {#1}}
+\newcommand{\phone}[1]{
+    \faPhone\ {#1}
+}
 
 % defines one's linkedin
 % usage: \linkedin{<linkedin>}
-\newcommand{\linkedin}[2][]{\faLinkedin\
-  \ifthenelse{\isempty{#1}}%
-    {\href{#2}{#2}}
-    {\href{#2}{#1}}}
+\NewDocumentCommand{\linkedin}{ m o }{
+    \faLinkedin\IfNoValueTF{#1}{
+        \underline{\href{#1}{#1}}
+    }{
+        \underline{\href{#2}{#1}}
+    }
+}
 
-\newcommand{\linkedinsquare}[2][]{\faLinkedinSquare\
-  \ifthenelse{\isempty{#1}}%
-    {\href{#2}{#2}}
-    {\href{#2}{#1}}}
+\NewDocumentCommand{\linkedinsquare}{ m o }{
+    \faLinkedinSquare\IfNoValueTF{#1}{
+        \underline{\href{#1}{#1}}
+    }{
+        \underline{\href{#2}{#1}}
+    }
+}
 
 % defines one's GitHub
 % usage: \github{<github>}
-\newcommand{\github}[2][]{\faGithub\
-  \ifthenelse{\isempty{#1}}%
-    {\href{#2}{#2}}
-    {\href{#2}{#1}}}
+\NewDocumentCommand{\github}{ m o }{
+    \faGithub\IfNoValueTF{#1}{
+        \underline{\href{#1}{#1}}
+    }{
+        \underline{\href{#2}{#1}}
+    }
+}
 
 % defines one's homepage
 % usage: \homepage{<homepage>}
-\newcommand{\homepage}[2][]{\faLink\
-  \ifthenelse{\isempty{#1}}%
-    {\href{#2}{#2}}
-    {\href{#2}{#1}}}
+\NewDocumentCommand{\homepage}{ m o }{
+    \faGlobe\IfNoValueTF{#1}{
+        \underline{\href{#1}{#1}}
+    }{
+        \underline{\href{#2}{#1}}
+    }
+}
+
+\NewDocumentCommand{\iconlink}{ o m o }{
+    \IfNoValueTF{#1}{
+        \let\icon\faLink
+    }{
+        \let\icon{#1}
+    }
+    \IfNoValueTF{#3}{
+        \underline{\icon\ \href{#2}{#2}}
+    }{
+        \underline{\icon\ \href{#3}{#2}}
+    }
+}
 
 
 \newcommand{\basicinfo}[1]{
