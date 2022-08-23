@@ -14,6 +14,7 @@ Rip-off of [Alex Chi Zhang (cxs/skyzh)](https://github.com/skyzh)'s [CV](https:/
 - [ ] Basic info list environment (list-like environment, straight line sepearted items listed on the same line; maybe smart wrapping)
 - [ ] "Updated on YYYY/MM/DD" footer
 - [ ] Refine hyperlink style (underlined, sufficient vspace -- no overlap w/ chars)
+- [ ] Makefile and stuff
 
 ### Additional ideas
 
