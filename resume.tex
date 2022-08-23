@@ -9,13 +9,13 @@
 
 %% basic personal info
 \name{Chi Zhang}
-\basicinfo {
-  \email{iskyzh@gmail.com}
-  \homepage{skyzh.dev}[https://skyzh.dev]
-  \github{skyzh}[https://github.com/skyzh]
-  \linkedinsquare{alex-chi-skyzh}[https://www.linkedin.com/in/alex-chi-skyzh/?originalSubdomain=cn]
+\begin{basicinfo}
+  \info{\email{iskyzh@gmail.com}}
+  \info{\homepage{skyzh.dev}[https://skyzh.dev]}
+  \info{\github{skyzh}[https://github.com/skyzh]}
+  \info{\linkedinsquare{alex-chi-skyzh}[https://www.linkedin.com/in/alex-chi-skyzh/?originalSubdomain=cn]}
   % \phone{}
-}
+\end{basicinfo}
 
 \section{Education}
 \cventry{Carnegie Mellon University}
@@ -39,7 +39,7 @@
   [Shanghai, China]
 
 \begin{itemize}
-  \item One of the top contributors of RisingWave — a next-generation streaming database in the cloud. \\ Worked on the development of almost all components related to stream computing and state store.
+  \item One of the top contributors of \iconlink[\faGithub][RisingWave]{https://github.com/singularity-data/risingwave} — a next-generation streaming database in the cloud. \\ Worked on the development of almost all components related to stream computing and state store.
   \item Designed and implemented \textbf{shared state} to support \textbf{streaming index} in RisingWave; implemented \textbf{lookup join executor} based on shared state to support efficient \textbf{index delta joins}.
   \item Lead the team to investigate and analyze performance issues in RisingWave with benchmarks; fixed bugs and proposed strategies which improved the system throughput by 10x in a 3-month period.
   \item Greatly improved RisingWave’s development experience by initiating the developer ecosystem, including streaming system dashboard, developers’ tool RiseDev, and a benchmark set-up tool based on Terraform. They are now indispensable parts of everyone’s development process.
@@ -51,15 +51,15 @@
   [Beijing, China]
 
 \begin{itemize}
-  \item Implemented \textbf{Zone-Aware Garbage Collection} in \textbf{TerrakDB} for Zoned Namespace SSDs, which reduced 3-4x of space amplification caused by interleaving write lifetime in a single ZNS zone. % TODO: github link
-  \item Added observability facilities to \textbf{ZenFS} (by Western Digital) to analyze bottlenecks and implemented a \textbf{WAL-Aware Zone Allocator}, which reduced the p999 tail latency by 100x. % TODO: github link
+  \item Implemented \textbf{Zone-Aware Garbage Collection} in \textbf{TerrakDB} for Zoned Namespace SSDs, which reduced 3-4x of space amplification caused by interleaving write lifetime in a single ZNS zone.\iconlink[\faGithub]{https://github.com/bytedance/terarkdb}
+  \item Added observability facilities to \textbf{ZenFS} (by Western Digital) to analyze bottlenecks and implemented a \textbf{WAL-Aware Zone Allocator}, which reduced the p999 tail latency by 100x.\iconlink[\faGithub]{https://github.com/bzbd/zenfs}
 \end{itemize}
 
 \cventry{PingCAP, Inc.}
   {August 2020 -- January 2021}
   [Sotrage System R\&D Intern, TiKV Storage Team][Shanghai, China]
   \begin{itemize}
-    \item Built LSM-based storage engine \textbf{AgateDB} from ground-up. Inspired by WiscKey and BadgerDB, AgateDB separates large vallues from LSM tree into value log, so as to reduce write amplification.
+    \item Built LSM-based storage engine \textbf{AgateDB} from ground-up. Inspired by WiscKey and BadgerDB, AgateDB separates large vallues from LSM tree into value log, so as to reduce write amplification.\iconlink[\faGithub]{https://github.com/tikv/agatedb}
   \end{itemize}
 
 \section{Open-Source Contributions}
@@ -67,7 +67,7 @@
 \cventry{RisingLight Community}
   {January 2022 -- Now}
   [RisingLight Project Maintainer]
-  [risinglightdb] % TODO: github link
+  [\iconlink[\faGithub][risinglightdb]{https://github.com/risinglightdb}]
   \begin{itemize}
     \item Leads the development of \textbf{RisingLight}, an OLAP database system for educational purpose.
     \item Designed and implemented a merge-tree \textbf{column storage engine} with snapshot isolation support; mentored community members to add functionalities like \textbf{filter scan} and \textbf{statistics}.
@@ -76,15 +76,15 @@
   \cventry{TiKV Community}
     {May 2020 -- Now}
     [TiKV Maintainer]
-    [tikv] % TODO: github link
+    [\iconlink[\faGithub][tikv]{https://github.com/tikv}] % TODO: github link
     \begin{itemize}
       \item Maintains \textbf{TiKV Coprocessor}, the push-down execution framework of TiDB.
-      \item Mentored community members to contribute new feature to TiKV in the \textbf{LFX Mentorship}. % TODO: github link
+      \item Mentored community members to contribute new feature to TiKV in the \textbf{LFX Mentorship}. \iconlink{https://github.com/tikv/tikv/issues/9066}\ \iconlink{https://github.com/tikv/tikv/issues/9747}
     \end{itemize}
 
-\cventry{Personal Projects}{\textbf{4k} followers\iconlink[\faGithub][skyzh]{https://github.com/skyzh}}
+\cventry{Personal Projects}{\textbf{4k} followers \iconlink[\faGithub][skyzh]{https://github.com/skyzh}}
 \begin{itemize}
-  \item \textbf{type-exercise-in-rust} (\faIcon[regular]{star}\ 870): Learn Rust black magics (GAT, HRTB, bypassing compiler bugs, macros) by implementing an expression framework in database systems. % TODO: github link
+  \item \textbf{type-exercise-in-rust} (\faIcon[regular]{star}\ 870): Learn Rust black magics (GAT, HRTB, bypassing compiler bugs, macros) by implementing an expression framework in database systems.\iconlink[\faGithub]{https://github.com/skyzh/type-exercise-in-rust}
 \end{itemize}
 
 

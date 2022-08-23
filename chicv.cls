@@ -151,16 +151,41 @@
     \end{itemize}
 }
 
+\newcounter{infonum}
+\NewDocumentCommand{\infomark}{}{}
+
+\NewDocumentEnvironment{basicinfo}{ o }
+{%
+    \par\vspace{1ex}
+    \setcounter{infonum}{0}
+    \IfValueTF{#1}{
+        \RenewDocumentCommand{\infomark}{}{#1}
+    }
+    {
+    }
+}
+{%
+}
+
+\NewDocumentCommand{\info}{ m }{
+    \stepcounter{infonum}
+    \ifthenelse{\theinfonum = 1}{
+        #1
+    }{
+        $\mid$ #1
+    }
+}
+
 % defines one's email
 % usage: \email{<email>}
 \newcommand{\email}[1]{
-    \faEnvelope\ \underline{\href{mailto:#1}{#1}}
+    \faEnvelope\ \underline{\href{mailto:#1}{#1}}\hspace{-14pt}
 }
 
 % defines one's phone
 % usage: \phone{<phone>}
 \newcommand{\phone}[1]{
-    \faPhone\ {#1}
+    \faPhone\ {#1}\hspace{-14pt}
 }
 
 % defines one's linkedin
@@ -171,6 +196,7 @@
     }{
         \underline{\href{#2}{#1}}
     }
+    \hspace{-20pt}
 }
 
 \NewDocumentCommand{\linkedinsquare}{ m o }{
@@ -179,6 +205,7 @@
     }{
         \underline{\href{#2}{#1}}
     }
+    \hspace{-20pt}
 }
 
 % defines one's GitHub
@@ -189,6 +216,7 @@
     }{
         \underline{\href{#2}{#1}}
     }
+    \hspace{-20pt}
 }
 
 % defines one's homepage
@@ -199,24 +227,19 @@
     }{
         \underline{\href{#2}{#1}}
     }
+    \hspace{-20pt}
 }
 
 \NewDocumentCommand{\iconlink}{o o m}{
-    \hspace{-16pt}
     \IfNoValueTF{#1}{
         \let\icon\faLink
     }{
         \let\icon#1
     }
-    \IfNoValueTF{#3}{
-        \underline{\href{#2}{\icon}}
+    \IfNoValueTF{#2}{
+        \hspace{-12pt}\underline{\href{#3}{\icon}}
     }{
-        \underline{\href{#3}{\icon\ #2}}
+        \hspace{-12pt}\underline{\href{#3}{\icon\ #2}}
     }
-    \hspace{-10pt}
-}
-
-
-\newcommand{\basicinfo}[1]{
-  {\par \large{#1} \par}
+    \hspace{-8pt}
 }
