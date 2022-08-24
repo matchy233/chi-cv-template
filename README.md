@@ -1,5 +1,8 @@
 # Chi CV template
 
+![GitHub top language](https://img.shields.io/github/languages/top/matchy233/chi-cv-template)
+![GitHub](https://img.shields.io/github/license/matchy233/chi-cv-template)
+
 Rip-off of [Alex Chi Zhang (cxs/skyzh)](https://github.com/skyzh)'s [CV](https://skyzh.github.io/files/cv.pdf) as a LaTeX template called `chicv`.
 
 Suggestions and PRs are welcome. Honestly, I'm not a master in LaTeX.
