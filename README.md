@@ -13,12 +13,7 @@ Suggestions and PRs are welcome. Honestly, I'm not a master in LaTeX.
 
 ### Basics
 
-- [x] Font set-ups (esp. local font config)
 - [ ] Local fontawesome set-up
-- [x] Skill list environment (label-free bullet list with proper indentation)
-- [x] Basic info list environment (list-like environment, straight line sepearted items listed on the same line)
-- [x] "Updated on YYYY/MM/DD" footer
-- [x] Refine hyperlink style (underlined, sufficient vspace -- no overlap w/ chars)
 - [ ] Makefile and stuff
 
 ### Chores
@@ -29,7 +24,7 @@ Suggestions and PRs are welcome. Honestly, I'm not a master in LaTeX.
 
 ### Additional ideas
 
-I personally need a academic curriculum vitae.
+I personally need an academic curriculum vitae.
 
 - [ ] Publication list
 - [ ] TBD
