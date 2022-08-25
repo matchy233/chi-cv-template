@@ -37,7 +37,7 @@
 % Footers
 \pagestyle{fancy}
 \fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
+\RenewDocumentCommand{\headrulewidth}{}{0pt}
 \rfoot{\color{gray}Updated on \today}
 
 % Spacings
@@ -48,18 +48,6 @@
     itemsep=.01em,
     topsep=0pt,
 }
-
-% \let\olditemize\itemize
-% \let\endolditemize\enditemize
-% \RenewDocumentEnvironment{itemize}{O{}}
-%   {\begin{olditemize}[#1]
-%      \let\olditem\item
-%      \RenewDocumentCommand{\item}{s}{%
-%        \IfBooleanTF{##1}
-%          {\olditem[]}
-%          {\olditem}}
-%      }
-%   {\end{olditemize}}
 
 % Font size macros
 \newcommand{\HUGE}{\@setfontsize\HUGE{24pt}{18}}
@@ -139,7 +127,7 @@
 {{\headingfont\Huge#1}}
 
 
-\newenvironment{compactlist}
+\NewDocumentEnvironment{compactlist}{}
 {
     \begin{itemize}[
         label={},
@@ -178,20 +166,20 @@
 
 % defines one's email
 % usage: \email{<email>}
-\newcommand{\email}[1]{
+\NewDocumentCommand{\email}{ m }{
     \faEnvelope\ \underline{\href{mailto:#1}{#1}}\hspace{-14pt}
 }
 
 % defines one's phone
 % usage: \phone{<phone>}
-\newcommand{\phone}[1]{
+\NewDocumentCommand{\phone}{ m }{
     \faPhone\ {#1}\hspace{-14pt}
 }
 
 % defines one's linkedin
 % usage: \linkedin{<linkedin>}
 \NewDocumentCommand{\linkedin}{ m o }{
-    \faLinkedinIn\IfNoValueTF{#1}{
+    \faLinkedinIn\IfNoValueTF{#2}{
         \underline{\href{#1}{#1}}
     }{
         \underline{\href{#2}{#1}}
@@ -211,7 +199,7 @@
 % defines one's GitHub
 % usage: \github{<github>}
 \NewDocumentCommand{\github}{ m o }{
-    \faGithub\IfNoValueTF{#1}{
+    \faGithub\IfNoValueTF{#2}{
         \underline{\href{#1}{#1}}
     }{
         \underline{\href{#2}{#1}}
@@ -222,7 +210,7 @@
 % defines one's homepage
 % usage: \homepage{<homepage>}
 \NewDocumentCommand{\homepage}{ m o }{
-    \faGlobe\IfNoValueTF{#1}{
+    \faGlobe\IfNoValueTF{#2}{
         \underline{\href{#1}{#1}}
     }{
         \underline{\href{#2}{#1}}
@@ -230,7 +218,7 @@
     \hspace{-20pt}
 }
 
-\NewDocumentCommand{\iconlink}{o o m}{
+\NewDocumentCommand{\iconlink}{ o o m }{
     \IfNoValueTF{#1}{
         \let\icon\faLink
     }{
