@@ -7,7 +7,7 @@
     a4paper,
     left=0.8in,
     right=0.8in,
-    top=0.5in,
+    top=0.4in,
     bottom=0.8in,
     nohead
 ]{geometry}
@@ -41,12 +41,12 @@
 \rfoot{\color{gray}Updated on \today}
 
 % Spacings
-\setlength{\footskip}{12pt}
+\setlength{\footskip}{0pt}
 \setlength{\parindent}{0pt}
 \setlist[itemize]{
     leftmargin=36pt,
-    itemsep=.01em,
-    topsep=0pt,
+    itemsep=-\parsep,
+    topsep=-\partopsep-\parskip,
 }
 
 % Font size macros
@@ -132,7 +132,8 @@
     \begin{itemize}[
         label={},
         leftmargin=12pt,
-        itemsep=-0.2em,
+        itemsep=-\parsep,
+        topsep=0pt-\partopsep-\parskip,
     ]
 }
 {
