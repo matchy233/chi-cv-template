@@ -34,14 +34,20 @@
 
 %% ----------------- END OF PACKAGES ----------------- %%
 
-% Footers
+% Footer
+%%% Only add "updated" footer to last page
 \pagestyle{fancy}
-\fancyhf{}
-\RenewDocumentCommand{\headrulewidth}{}{0pt}
-\rfoot{\color{gray}Updated on \today}
+\fancypagestyle{default}{
+}
+\fancypagestyle{lastpage}{
+    \fancyhf{}
+    \fancyhf{}
+    \RenewDocumentCommand{\headrulewidth}{}{0pt}
+    \rfoot{\color{gray}Updated on \today}
+}
 
 % Spacings
-\setlength{\footskip}{0pt}
+\setlength{\footskip}{4pt}
 \setlength{\parindent}{0pt}
 \setlist[itemize]{
     leftmargin=36pt,
@@ -219,6 +225,8 @@
     \hspace{-20pt}
 }
 
+% Customize icon link
+% usage: \iconlink[<icon:fontawesome>][<text>]{<url>}
 \NewDocumentCommand{\iconlink}{ o o m }{
     \IfNoValueTF{#1}{
         \let\icon\faLink
@@ -232,3 +240,7 @@
     }
     \hspace{-8pt}
 }
+
+% Set up pagestyle
+\pagestyle{default}
+\AtEndDocument{\thispagestyle{lastpage}}
