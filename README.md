@@ -9,6 +9,12 @@ Suggestions and PRs are welcome. Honestly, I'm not a master in LaTeX.
 
 照着迟先生的简历扒的模板。祝大家都能成功得令人震惊。
 
+## Sample Output
+
+![Sample output of Chi-CV template](./img/chi-cv-preview.png)
+
+[PDF file](resume.pdf)
+
 ## To-Dos
 
 ### Basics
