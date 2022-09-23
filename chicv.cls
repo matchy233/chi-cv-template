@@ -7,8 +7,8 @@
     a4paper,
     left=0.8in,
     right=0.8in,
-    top=0.4in,
-    bottom=0.8in,
+    top=0.5in,
+    bottom=0.5in,
     nohead
 ]{geometry}
 
