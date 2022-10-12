@@ -71,12 +71,13 @@
     \setmainfont{XCharter}[ % in case XCharter is not installed
         Path = ./fonts/,
         Extension = .otf,
+        UprightFont = XCharter-Roman,
         BoldFont = XCharter-Bold,
         ItalicFont = XCharter-Italic,
         BoldItalicFont = XCharter-BoldItalic,
-        BoldSlantedFont = XCharter-BoldSlanted,
         SlantedFont = XCharter-Slanted,
-        RomanFont = XCharter-Roman,
+        BoldSlantedFont = XCharter-BoldSlanted,
+        SmallCapsFeatures =  {Letters=SmallCaps}
     ]
 }
 
