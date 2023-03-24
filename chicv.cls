@@ -36,6 +36,10 @@
 % For list environment customizations
 \RequirePackage{enumitem}
 
+% For customizing underline
+\RequirePackage[normalem]{ulem}
+\RequirePackage{contour}
+
 %% ----------------- END OF PACKAGES ----------------- %%
 
 % Footer
@@ -111,6 +115,17 @@
     {12pt} % left spacing
     {\parskip} % before spacing
     {\parskip} % after spacing
+
+% custom underline style
+\renewcommand{\ULdepth}{3pt}
+\contourlength{0.6pt}
+\RenewDocumentCommand{\underline}{ m }
+{
+    \uline{\phantom{#1}}%
+    \llap{\contour{white}{#1}}%
+}
+
+% ----------------- CUSTOM COMMANDS ----------------- %
 
 \NewDocumentCommand{\cventry}{ m m o o }
 {
