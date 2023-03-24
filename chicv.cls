@@ -8,7 +8,7 @@
     left=0.8in,
     right=0.8in,
     top=0.5in,
-    bottom=0.5in,
+    bottom=0.8in,
     nohead
 ]{geometry}
 
@@ -54,10 +54,12 @@
 % Spacings
 \setlength{\footskip}{4pt}
 \setlength{\parindent}{0pt}
+\setlength{\leftskip}{0pt}
 \setlist[itemize]{
     leftmargin=36pt,
     itemsep=-\parsep,
     topsep=-\partopsep-\parskip,
+    after=\vspace{2pt}
 }
 
 % Font size macros
@@ -100,7 +102,7 @@
 
 % format for subseciton title
 \titleformat{\subsection}
-    {\large} % shape
+    {} % shape
     {} % format
     {0em} % label
     {} % beforcode
@@ -115,7 +117,8 @@
     \subsection[#1]{\textbf{#1} \hfill #2}
     \IfNoValueTF{#3}
     {}
-    {{\parindent=12pt\par #3 \hfill #4 \par}}
+    {\setlength{\parindent}{12pt}{\par #3 \hfill #4 \par}}
+    \vspace{2pt}
 }
 
 
