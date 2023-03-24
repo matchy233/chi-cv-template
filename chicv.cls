@@ -16,8 +16,12 @@
 
 % For font setting
 \RequirePackage[T1]{fontenc}
-\RequirePackage{fontspec}
 \RequirePackage{titlesec}
+
+% Require XCharter font
+\RequirePackage{XCharter}
+\setmainfont{XCharter}
+
 % For color
 \RequirePackage{xcolor}
 
@@ -63,22 +67,6 @@
 \renewcommand\LARGE{\@setfontsize\LARGE{18pt}{18}}
 \renewcommand\Large{\@setfontsize\Large{12pt}{18}}
 \renewcommand\large{\@setfontsize\large{11pt}{18}}
-
-% mainfont: XCharter
-\IfFontExistsTF{XCharter}{
-    \setmainfont{XCharter}
-}{
-    \setmainfont{XCharter}[ % in case XCharter is not installed
-        Path = ./fonts/,
-        Extension = .otf,
-        BoldFont = XCharter-Bold,
-        ItalicFont = XCharter-Italic,
-        BoldItalicFont = XCharter-BoldItalic,
-        BoldSlantedFont = XCharter-BoldSlanted,
-        SlantedFont = XCharter-Slanted,
-        RomanFont = XCharter-Roman,
-    ]
-}
 
 % heading font: Avenir Next
 \IfFontExistsTF{Avenir Next LT Pro}{
