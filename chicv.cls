@@ -247,6 +247,17 @@
     \hspace{-20pt}
 }
 
+% defines one's GoogleScholar
+% usage: \googlescholar{<homepage>}
+\NewDocumentCommand{\googlescholar}{ m o }{
+    \faGraduationCap\IfNoValueTF{#2}{
+        \underline{\href{#1}{#1}}
+    }{
+        \underline{\href{#2}{#1}}
+    }
+    \hspace{-20pt}
+}
+
 % Customize icon link
 % usage: \iconlink[<icon:fontawesome>][<text>]{<url>}
 \NewDocumentCommand{\iconlink}{ o o m }{
