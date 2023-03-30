@@ -5,6 +5,10 @@
 % optionally suppress printing the page number
 \pagenumbering{gobble}
 
+% optional Chinese support
+% \useChinese{Medium}{Heavy}
+% \useChinese{Regular}{Bold}
+
 \begin{document}
 
 %% basic personal info
@@ -29,6 +33,7 @@
   \begin{itemize}
     \item GPA 93.58/100, Rank 1/149, National Scholarship 2019 (Top 0.2\% national-wide)
     \item A+ Courses: Operating Systems, Computer Architecture, Computer Networks, and 28 others
+    % \item 长中文段落测试：「于是我们奋力前进，却如同逆水行舟，注定要不停地退回过去。」——《了不起的盖茨比》菲茨杰拉德
   \end{itemize}
 
 \section{Internship Experience}
@@ -50,7 +55,7 @@
   [Storage System R\&D Intern, TerarkDB Team]
   [Beijing, China]
 
-\begin{itemize}
+  \begin{itemize}
   \item Implemented \textbf{Zone-Aware Garbage Collection} in \textbf{TerrakDB} for Zoned Namespace SSDs, which\\ reduced 3-4x of space amplification caused by interleaving write lifetime in a single ZNS zone.\iconlink[\faGithub]{https://github.com/bytedance/terarkdb}
   \item Added observability facilities to \textbf{ZenFS} (by Western Digital) to analyze bottlenecks and implemented a \textbf{WAL-Aware Zone Allocator}, which reduced the p999 tail latency by 100x.\iconlink[\faGithub]{https://github.com/bzbd/zenfs}
 \end{itemize}

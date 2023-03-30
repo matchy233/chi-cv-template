@@ -92,6 +92,20 @@
     }
 }
 
+% add CJK fonts and use zh line break
+% usage: \useChinese{<normal font weight>}{<bold font weight>}
+\newcommand{\useChinese}[2]{
+    \RequirePackage{xeCJK}
+    \setCJKmainfont{SourceHanSerifCN}[
+        Path = ./fonts/,
+        Extension = .otf,
+        UprightFont = *-#1,
+        BoldFont = *-#2,
+    ]
+    \XeTeXlinebreaklocale "zh"
+    \XeTeXlinebreakskip = 0pt plus 1pt
+}
+
 % format for section title
 \titleformat{\section}
     {\headingfont\Large}                % shape
